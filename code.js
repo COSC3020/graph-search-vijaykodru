@@ -1,43 +1,32 @@
-// Replit autofill helped me with some of this code!
-
-function search(graph, startNode, targetNode, visitedNodes, path) 
-{
-  if (startNode === targetNode) 
-  {
-    visitedNodes.push(startNode);
-    path.push(startNode);
-    return true;
-  }
-
-  visitedNodes.push(startNode);
-  path.push(startNode);
-
-  for (let i = 0; i < graph[startNode].length; i++) 
-  {
-    let node = graph[startNode][i];
-
-    if (visitedNodes.indexOf(node) === -1) 
-    {
-      if (search(graph, node, targetNode, visitedNodes, path)) 
-      {
-        return true;
-      }
+function depthFirstSearch(graph, startNode, targetNode) {
+    let path = [];
+    let visit = [];
+    if(graph.length === 0 || DFS(graph, startNode, targetNode, visit, path) === false){
+        return [];
     }
-  }
-  path.pop();
-  return false;
+    else{
+        return path;
+    }    
 }
 
-function depthFirstSearch(graph, startNode, targetNode) 
-{
-  let visitedNodes = [];
-  let path = [];
-  if (graph.length === 0 || search(graph, startNode, targetNode, visitedNodes, path) === false)
-  {
-      return [];
-  }
-  else 
-  {
-    return path;
-  }
+function DFS(graph, start, target, visit, path){
+    if(start == target){
+        visit.push(start);
+        path.push(start);
+        return true;
+    }
+
+    visit.push(start);
+    path.push(start);
+
+    for(let i = 0; i < graph[start].length; i++){
+        let current = graph[start][i];
+        if(visit.indexOf(current) === -1){
+            if(DFS(graph, current, target, visit, path)){
+                return true;
+            }
+        }
+    }
+    path.pop();
+    return false;
 }
