@@ -51,7 +51,7 @@ let Graph5 = [
 
 // Graph1
 assert(JSON.stringify(depthFirstSearch(Graph1, 0, 3)) === JSON.stringify([0, 2, 3]));
-assert(JSON.stringify(depthFirstSearch(Graph1, 0, 7)) === JSON.stringify([]));
+assert(JSON.stringify(depthFirstSearch(Graph1, 0, 3)) === JSON.stringify([0, 1, 4, 3]));
 
 // Graph2
 assert(JSON.stringify(depthFirstSearch(Graph2, 0, 5)) === JSON.stringify([0, 1, 2, 4, 5]));
