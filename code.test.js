@@ -3,70 +3,45 @@ const assert = require('assert');
 
 eval(fs.readFileSync('code.js')+'');
 
-
-let Graph1 = [
-    [1, 2, 3],
-    [4, 5],
-    [3, 5],
-    [4],
-    [6],
-    [],
-    [7],
-    []
+let classGraph = [
+  [1,2,5],
+  [4],
+  [3,5],
+  [4],
+  [],
+  [6],
+  []
 ];
 
-let Graph2 = [
-    [1], 
-    [2, 3], 
-    [4, 5], 
-    [], 
-    [5], 
-    []
+let ferrisWheel = [[1, 2, 3, 4, 5, 6], [], [], [], [], [], []];
+
+let linear = [
+  [1], 
+  [2], 
+  [3], 
+  [4], 
+  []
 ];
 
+let tree = [[1,2], [3,4], [5,6], [], [], [], []];
 
-let Graph3 = [
-    [0, 1, 1, 1, 0],
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0]
+let A = [
+  [1], 
+  [2, 5], 
+  [3], 
+  [4, 5], 
+  [], 
+  []
 ];
-
-let Graph4 = [
-    [0, 1, 0, 1, 0],
-    [1, 0, 1, 0, 1],
-    [0, 1, 0, 1, 0],
-    [1, 0, 1, 0, 1],
-    [0, 1, 0, 1, 0]
-];
-
-let Graph5 = [
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1]
-];
-
-let Graph6 = [];
-
-
-// Graph1
-assert.deepStrictEqual(depthFirstSearch(Graph1, 0, 3), [0, 2, 3]);
-
-// Graph2
-assert.deepStrictEqual(depthFirstSearch(Graph2, 0, 5), [0, 1, 2, 4, 5]);
-
-// Graph3
-assert.deepStrictEqual(depthFirstSearch(Graph3, 0, 4), []);
-
-// Graph4
-assert.deepStrictEqual(depthFirstSearch(Graph4, 0, 4), []);
-assert.deepStrictEqual(depthFirstSearch(Graph4, 3, 3), [3]);
-
-// Graph5
-assert.deepStrictEqual(depthFirstSearch(Graph5, 2, 2), [2]);
-assert.deepStrictEqual(depthFirstSearch(Graph5, 2, 1), []);
-assert.deepStrictEqual(depthFirstSearch(Graph5, 1, 3), []);
-
-// Graph6
-assert.deepStrictEqual(depthFirstSearch(Graph6, 0, 1), []);
+assert(JSON.stringify(depthFirstSearch(classGraph,0,3)) == JSON.stringify([0,2,3]));
+assert(JSON.stringify(depthFirstSearch(classGraph,0,7)) == JSON.stringify([]));
+assert(JSON.stringify(depthFirstSearch([],0,0)) == JSON.stringify([]));
+assert(JSON.stringify(depthFirstSearch([[]],0,0)) == JSON.stringify([0]));
+assert(JSON.stringify(depthFirstSearch(ferrisWheel,0,6)) == JSON.stringify([0,6]));
+assert(JSON.stringify(depthFirstSearch(ferrisWheel, 0, 0)) == JSON.stringify([0]));
+assert(JSON.stringify(depthFirstSearch(linear,0,4)) == JSON.stringify([0,1,2,3,4]));
+assert(JSON.stringify(depthFirstSearch(linear,4,3)) == JSON.stringify([]));
+assert(JSON.stringify(depthFirstSearch(tree,0,0)) == JSON.stringify([0]));
+assert(JSON.stringify(depthFirstSearch(tree,0,5)) == JSON.stringify([0,2,5]));
+assert(JSON.stringify(depthFirstSearch(A,3,5)) == JSON.stringify([3,5]));
+assert(JSON.stringify(depthFirstSearch(A,0,5)) == JSON.stringify([0,1,2,3,5]));
