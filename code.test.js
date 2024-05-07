@@ -51,7 +51,7 @@ let Graph6 = [];
 
 
 // Graph1
-assert.deepStrictEqual(depthFirstSearch(Graph1, 0, 3), [0, 1, 3]);
+assert.deepStrictEqual(depthFirstSearch(Graph1, 0, 3), [0, 2, 3]);
 
 // Graph2
 assert.deepStrictEqual(depthFirstSearch(Graph2, 0, 5), [0, 1, 2, 4, 5]);
