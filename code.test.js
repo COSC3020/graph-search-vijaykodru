@@ -1,7 +1,7 @@
 const fs = require('fs');
-const jsc = require('jsverify');
+const assert = require('assert');
 
-eval(fs.readFileSync('code.js') + '');
+eval(fs.readFileSync('code.js')+'');
 
 
 let Graph1 = [
