@@ -51,24 +51,23 @@ let Graph6 = [];
 
 
 // Graph1
-assert(JSON.stringify(depthFirstSearch(Graph1, 0, 3)) === JSON.stringify([0, 2, 3]));
+assert.deepStrictEqual(depthFirstSearch(Graph1, 0, 3), [0, 1, 3]);
 
 // Graph2
-assert(JSON.stringify(depthFirstSearch(Graph2, 0, 5)) === JSON.stringify([0, 1, 2, 4, 5]));
+assert.deepStrictEqual(depthFirstSearch(Graph2, 0, 5), [0, 1, 2, 4, 5]);
 
 // Graph3
-//assert(JSON.stringify(depthFirstSearch(Graph3, 0, 4)) === JSON.stringify([0, 1, 4]));
-assert(JSON.stringify(depthFirstSearch(Graph3, 1, 3)) === JSON.stringify([]));
+assert.deepStrictEqual(depthFirstSearch(Graph3, 0, 4), []);
 
 // Graph4
-assert(JSON.stringify(depthFirstSearch(Graph4, 0, 4)) === JSON.stringify([0, 1, 4]));
-assert(JSON.stringify(depthFirstSearch(Graph4, 1, 2)) === JSON.stringify([1, 0, 2]));
-assert(JSON.stringify(depthFirstSearch(Graph4, 3, 3)) === JSON.stringify([3]));
+assert.deepStrictEqual(depthFirstSearch(Graph4, 0, 4), [0, 1, 4]);
+assert.deepStrictEqual(depthFirstSearch(Graph4, 1, 2), [1, 0, 2]);
+assert.deepStrictEqual(depthFirstSearch(Graph4, 3, 3), [3]);
 
 // Graph5
-assert(JSON.stringify(depthFirstSearch(Graph5, 0, 2)) === JSON.stringify([0, 1, 2]));
-assert(JSON.stringify(depthFirstSearch(Graph5, 2, 1)) === JSON.stringify([2, 0, 1]));
-assert(JSON.stringify(depthFirstSearch(Graph5, 1, 0)) === JSON.stringify([1, 0]));
+assert.deepStrictEqual(depthFirstSearch(Graph5, 0, 2), [0, 1, 2]);
+assert.deepStrictEqual(depthFirstSearch(Graph5, 2, 1), [2, 0, 1]);
+assert.deepStrictEqual(depthFirstSearch(Graph5, 1, 0), [1, 0]);
 
 // Graph6
-assert(JSON.stringify(depthFirstSearch(emptyGraph, 0, 1)) === JSON.stringify([]));
+assert.deepStrictEqual(depthFirstSearch(Graph6, 0, 1), []);
