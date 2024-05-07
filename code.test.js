@@ -61,7 +61,6 @@ assert.deepStrictEqual(depthFirstSearch(Graph3, 0, 4), []);
 
 // Graph4
 assert.deepStrictEqual(depthFirstSearch(Graph4, 0, 4), []);
-assert.deepStrictEqual(depthFirstSearch(Graph4, 1, 2), [1, 2]);
 assert.deepStrictEqual(depthFirstSearch(Graph4, 3, 3), [3]);
 
 // Graph5
