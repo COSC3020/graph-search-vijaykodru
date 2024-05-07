@@ -47,11 +47,11 @@ let Graph5 = [
     [0, 0, 1]
 ];
 
+let Graph6 = [];
 
 
 // Graph1
 assert(JSON.stringify(depthFirstSearch(Graph1, 0, 3)) === JSON.stringify([0, 2, 3]));
-assert(JSON.stringify(depthFirstSearch(Graph1, 0, 3)) === JSON.stringify([0, 1, 4, 3]));
 
 // Graph2
 assert(JSON.stringify(depthFirstSearch(Graph2, 0, 5)) === JSON.stringify([0, 1, 2, 4, 5]));
@@ -69,3 +69,6 @@ assert(JSON.stringify(depthFirstSearch(Graph4, 3, 3)) === JSON.stringify([3]));
 assert(JSON.stringify(depthFirstSearch(Graph5, 0, 2)) === JSON.stringify([0, 1, 2]));
 assert(JSON.stringify(depthFirstSearch(Graph5, 2, 1)) === JSON.stringify([2, 0, 1]));
 assert(JSON.stringify(depthFirstSearch(Graph5, 1, 0)) === JSON.stringify([1, 0]));
+
+// Graph6
+assert(JSON.stringify(depthFirstSearch(emptyGraph, 0, 1)) === JSON.stringify([]));
