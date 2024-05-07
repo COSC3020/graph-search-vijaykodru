@@ -1,34 +1,43 @@
-function depthFirstSearch(graph, startNode, targetNode) {
-    if (startNode < 0 || startNode >= graph.length || targetNode < 0 || targetNode >= graph.length) {
-        return [];
-    }
+// Replit autofill helped me with some of this code!
 
-    let path = [];
-    let visit = new Array(graph.length).fill(false);
-    
-    if (DFS(graph, startNode, targetNode, visit, path)) {
-        return path;
-    } else {
-        return [];
+function search(graph, startNode, targetNode, visitedNodes, path) 
+{
+  if (startNode === targetNode) 
+  {
+    visitedNodes.push(startNode);
+    path.push(startNode);
+    return true;
+  }
+
+  visitedNodes.push(startNode);
+  path.push(startNode);
+
+  for (let i = 0; i < graph[startNode].length; i++) 
+  {
+    let node = graph[startNode][i];
+
+    if (visitedNodes.indexOf(node) === -1) 
+    {
+      if (search(graph, node, targetNode, visitedNodes, path)) 
+      {
+        return true;
+      }
     }
+  }
+  path.pop();
+  return false;
 }
 
-function DFS(graph, start, target, visit, path) {
-    visit[start] = true;
-    path.push(start);
-
-    if (start === target) {
-        return true;
-    }
-    
-    for (let i = 0; i < graph[start].length; i++) {
-        let current = graph[start][i];
-        if (!visit[current]) {
-            if (DFS(graph, current, target, visit, path)) {
-                return true;
-            }
-        }
-    }
-    path.pop();
-    return false;
+function depthFirstSearch(graph, startNode, targetNode) 
+{
+  let visitedNodes = [];
+  let path = [];
+  if (graph.length === 0 || search(graph, startNode, targetNode, visitedNodes, path) === false)
+  {
+      return [];
+  }
+  else 
+  {
+    return path;
+  }
 }
