@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/M24O3lId)
 # Search in Graphs
 
 Recall the pseudocode for Depth-First Search:
@@ -29,3 +30,15 @@ answer, including your reasoning, to this markdown file.
 ## Bonus
 
 Implement and analyze breadth-first search.
+
+The worst case big $\Theta$ complexity for my implementation is $\Theta(|V| + |E|)$. This is because of the case where the target node might exist or there is no way to it which will result in the code iterating over V number of vertices and checking every edge E for that vertice. Adding these two will result in the worst case big $\Theta$ complexity of $\Theta(|V| + |E|)$.
+
+References:
+
+https://brilliant.org/wiki/depth-first-search-dfs/
+
+graph-search-IshitaPatel18 (coding part was more concise and had to implement from this)
+
+graph-search-swilso59
+
+ChatGPT for finding what i was doing wrong, because couple of my test cases are failing.
