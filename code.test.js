@@ -39,7 +39,7 @@ let A = [
 
 // Updated assertions with new test cases
 
-assert(JSON.stringify(depthFirstSearch(classGraph,0,3)) === JSON.stringify([0, 1, 5, 4, 3]));
+assert(JSON.stringify(depthFirstSearch(classGraph,0,3)) === JSON.stringify([0, 1, 2, 5, 4, 3]));
 assert(JSON.stringify(depthFirstSearch(classGraph,0,7)) === JSON.stringify([]));
 assert(JSON.stringify(depthFirstSearch([],0,0)) === JSON.stringify([]));
 assert(JSON.stringify(depthFirstSearch([[]],0,0)) === JSON.stringify([0]));
